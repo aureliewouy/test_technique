@@ -1,0 +1,84 @@
+#container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#gameContainer {
+  width: 700px;
+  height: 600px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+.circle {
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  border-radius: 100%;
+  margin: auto;
+}
+.cross {
+  width: 60px;
+  height: 60px;
+  /* border: 1px solid black; */
+  margin: auto;
+  position: relative;
+}
+.cross:before,
+.cross:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background-color: black;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cross:before {
+  transform: rotate(45deg);
+}
+
+.cross:after {
+  transform: rotate(-45deg);
+}
+
+#player1Display,
+#player2Display {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+#player1Display .circle,
+#player2Display .cross {
+  margin-left: 20px;
+  width: 30px;
+  height: 30px;
+}
+.arrow {
+  position: absolute;
+  top: 0;
+  left: -30px;
+}
+.arrow::after {
+  content: "->";
+  width: 60px;
+  height: 60px;
+}
+#replay {
+  display: none;
+}
